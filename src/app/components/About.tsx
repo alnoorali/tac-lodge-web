@@ -1,0 +1,135 @@
+"use client"; 
+
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { API_ENDPOINTS } from "../api/api";
+
+interface AboutData {
+  about_main_heading?: string;
+  about_main_heading_content?: string;
+  about_sub_heading?: string;
+  about_sub_heading_content?: string;
+}
+
+const About = () => {
+  const [aboutData, setAboutData] = useState<AboutData>({});
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(API_ENDPOINTS.HOME.GET_HOME);
+        const data = await response.json();
+        setAboutData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div className="flex justify-center items-center md:ml-20">
+      {/* Image Section */}
+      <div className="relative hidden md:block">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }} 
+        >
+          <Image src="/teamwork.png" alt="pic" width={674} height={389} className="mt-52" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="absolute bottom-[-80px] left-[-70px]"
+        >
+          <Image src="/Group.png" alt="pic" width={204} height={167} />
+        </motion.div>
+      </div>
+
+      {/* Content Section */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="flex justify-center items-center md:justify-end p-2 md:p-4 md:mr-32 mt-8 md:mt-16"
+      >
+        <div className="flex flex-col justify-start items-start">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-white flex justify-center items-center mb-3 font-semibold rounded-[10px] border bg-[#FFAB91] w-[106px] h-[32px]"
+          >
+            ABOUT US
+          </motion.h2>
+
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="text-[28px] md:text-[44px] md:w-[320px] font-bold"
+          >
+            {aboutData.about_main_heading}
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-[16px] md:w-[360px] mt-4"
+          >
+            {aboutData.about_main_heading_content}
+          </motion.p>
+
+          {/* Review Box */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="bg-[#EDF5FF] md:bg-[#FFAB914D] w-full md:w-[376px] h-[220px] flex mt-3 md:mt-4 rounded-[10px]"
+          >
+            <div className="mt-7 ml-7 relative">
+              <Image src="/Rectangle1.png" alt="rectangle" width={60} height={60} />
+              <Image src="/pie-chart1.png" alt="rectangle" width={32} height={32} className="absolute top-3 left-3" />
+            </div>
+            <div className="flex flex-col ml-6 mt-3 md:mt-5 mb-5">
+              <h2 className="text-[20px] font-semibold mb-2">{aboutData.about_sub_heading}</h2>
+              <p className="text-[16px] w-[231px]">
+                {aboutData.about_sub_heading_content}
+              </p>
+              <div className="block md:hidden">
+                <Link href="/" className="text-[#FE5722] text-lg font-semibold hover:text-orange-700">
+                  LEARN MORE
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Learn More Button */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="hidden md:block w-[200px] h-[58px] bg-[#FF8B66] hover:bg-orange-500 text-white rounded-[10px] mt-4"
+          >
+            LEARN MORE
+          </motion.button>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+export default About;
