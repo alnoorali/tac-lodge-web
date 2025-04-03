@@ -26,7 +26,22 @@ const API_ENDPOINTS = {
         GET_ONLINETAX: `${API_BASE_URL}/online-tax-return/getOnlineTaxReturn`
     },
     CONTACTUS: {
-        GET_ONLINETAX: `${API_BASE_URL}/contact-us/getContactUs`
+        GET_CONTACTUS: `${API_BASE_URL}/contact-us/getContactUs`
+    },
+    CONTACTFORM: {
+        SUBMIT_CONTACTFORM: `${API_BASE_URL}/contact-form/submit`
+    },
+    ABOUTUS: {
+        GET_ABOUTUS: `${API_BASE_URL}/about-us/getAboutUs`
+    },
+    TEMRS: {
+        GET_TEMRS: `${API_BASE_URL}/terms-conditions/getTermsConditions`
+    },
+    PRIVACYPOLICY: {
+        GET_PRIVACYPOLICY: `${API_BASE_URL}/privacy-policy/getPrivacyPolicy`
+    },
+    REFUNDPOLICY: {
+        GET_REFUNDPOLICY: `${API_BASE_URL}/refund-policy/getRefundPolicy`
     },
     AUTH: {
         LOGIN: `${API_BASE_URL}/auth/login`,
@@ -67,7 +82,7 @@ const ContactForm = ()=>{
             const fetchData = {
                 "ContactForm.useEffect.fetchData": async ()=>{
                     try {
-                        const response = await fetch(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["API_ENDPOINTS"].CONTACTUS.GET_ONLINETAX);
+                        const response = await fetch(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["API_ENDPOINTS"].CONTACTUS.GET_CONTACTUS);
                         const data = await response.json();
                         setContactUsData(data);
                     } catch (error) {
@@ -332,9 +347,8 @@ const ContactInfo = ()=>{
             const fetchData = {
                 "ContactInfo.useEffect.fetchData": async ()=>{
                     try {
-                        const response = await fetch(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["API_ENDPOINTS"].CONTACTUS.GET_ONLINETAX);
+                        const response = await fetch(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["API_ENDPOINTS"].CONTACTUS.GET_CONTACTUS);
                         const data = await response.json();
-                        console.log("data :", data);
                         setContactUsData(data);
                     } catch (error) {
                         console.error("Error fetching data:", error);
@@ -366,12 +380,12 @@ const ContactInfo = ()=>{
                             className: "text-black w-6 h-6"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/ContactInfo.tsx",
-                            lineNumber: 57,
+                            lineNumber: 56,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ContactInfo.tsx",
-                        lineNumber: 53,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -382,7 +396,7 @@ const ContactInfo = ()=>{
                                 children: "24/7 Service"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/ContactInfo.tsx",
-                                lineNumber: 60,
+                                lineNumber: 59,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -390,20 +404,20 @@ const ContactInfo = ()=>{
                                 children: "Call Us Today"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/ContactInfo.tsx",
-                                lineNumber: 61,
+                                lineNumber: 60,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/ContactInfo.tsx",
-                        lineNumber: 59,
+                        lineNumber: 58,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {
                         className: "w-full my-3 border-white pt-4 mt-8"
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ContactInfo.tsx",
-                        lineNumber: 63,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -412,7 +426,7 @@ const ContactInfo = ()=>{
                         children: contactUsData.contact_1
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ContactInfo.tsx",
-                        lineNumber: 64,
+                        lineNumber: 63,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -421,13 +435,13 @@ const ContactInfo = ()=>{
                         children: contactUsData.contact_2
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ContactInfo.tsx",
-                        lineNumber: 67,
+                        lineNumber: 66,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/ContactInfo.tsx",
-                lineNumber: 45,
+                lineNumber: 44,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -449,12 +463,12 @@ const ContactInfo = ()=>{
                             className: "text-black w-6 h-6"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/ContactInfo.tsx",
-                            lineNumber: 85,
+                            lineNumber: 84,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ContactInfo.tsx",
-                        lineNumber: 81,
+                        lineNumber: 80,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -465,7 +479,7 @@ const ContactInfo = ()=>{
                                 children: "Address"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/ContactInfo.tsx",
-                                lineNumber: 88,
+                                lineNumber: 87,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -473,20 +487,20 @@ const ContactInfo = ()=>{
                                 children: "Our Location"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/ContactInfo.tsx",
-                                lineNumber: 89,
+                                lineNumber: 88,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/ContactInfo.tsx",
-                        lineNumber: 87,
+                        lineNumber: 86,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {
                         className: "w-full my-3 border-white pt-4 mt-8"
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ContactInfo.tsx",
-                        lineNumber: 91,
+                        lineNumber: 90,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -495,13 +509,13 @@ const ContactInfo = ()=>{
                         children: contactUsData.location_1
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ContactInfo.tsx",
-                        lineNumber: 92,
+                        lineNumber: 91,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/ContactInfo.tsx",
-                lineNumber: 73,
+                lineNumber: 72,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -523,12 +537,12 @@ const ContactInfo = ()=>{
                             className: "text-black w-6 h-6"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/ContactInfo.tsx",
-                            lineNumber: 113,
+                            lineNumber: 112,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ContactInfo.tsx",
-                        lineNumber: 109,
+                        lineNumber: 108,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -539,7 +553,7 @@ const ContactInfo = ()=>{
                                 children: "Dropline"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/ContactInfo.tsx",
-                                lineNumber: 116,
+                                lineNumber: 115,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -547,20 +561,20 @@ const ContactInfo = ()=>{
                                 children: "Mail Information"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/ContactInfo.tsx",
-                                lineNumber: 117,
+                                lineNumber: 116,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/ContactInfo.tsx",
-                        lineNumber: 115,
+                        lineNumber: 114,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {
                         className: "w-full my-3 border-white pt-4 mt-8"
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ContactInfo.tsx",
-                        lineNumber: 119,
+                        lineNumber: 118,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -569,19 +583,19 @@ const ContactInfo = ()=>{
                         children: contactUsData.email_1
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ContactInfo.tsx",
-                        lineNumber: 120,
+                        lineNumber: 119,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/ContactInfo.tsx",
-                lineNumber: 101,
+                lineNumber: 100,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/ContactInfo.tsx",
-        lineNumber: 43,
+        lineNumber: 42,
         columnNumber: 5
     }, this);
 };

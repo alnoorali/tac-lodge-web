@@ -355,6 +355,9 @@ const API_ENDPOINTS = {
     CONTACTUS: {
         GET_CONTACTUS: `${API_BASE_URL}/contact-us/getContactUs`
     },
+    CONTACTFORM: {
+        SUBMIT_CONTACTFORM: `${API_BASE_URL}/contact-form/submit`
+    },
     ABOUTUS: {
         GET_ABOUTUS: `${API_BASE_URL}/about-us/getAboutUs`
     },
